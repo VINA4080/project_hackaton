@@ -1,0 +1,257 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Garamond:wght@300;400&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=MeieScript:wght@300;400&display=swap);
+
+
+:root{
+    --main-color: #9fc754;
+    --black: #222;
+    --primary-color: #0a1118;
+    --primary-color-highlight: #233D54;
+    --bs-body-bg : #FBF0F6;
+    --bs-body-font-family : 'Montserrat';
+    --dark-bg: rgba(0,0,0,.7);
+    --light-bg: #eee;
+    --border: .1rem solid var(--black);
+    --box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    --text-shadow: 0 1.5rem 3rem rgba(0,0,0,.3);
+}
+
+*{
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    text-decoration: none;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+html::-webkit-scrollbar{
+    width: 1rem;
+}
+
+html::-webkit-scrollbar-track{
+    background-color: white;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: var(--main-color);
+}
+
+section{
+    padding: 2rem 5%;
+}
+
+.header{
+    /* position: sticky; */
+    top: 0; left: 0; right: 0;
+    z-index: 1000px;
+    background-color: var(--light-bg);
+    display: flex;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    box-shadow: var(--box-shadow);
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .logo{
+    font-size: 2.5rem;
+    color: var(--black);
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .navbar a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-left: 1.5rem;
+    color: var(--black);
+    text-decoration: none;
+    transition: .5s;
+    padding: 20px;
+    font-weight: 700;
+    border-radius: 20px;
+}
+
+.header .navbar a:hover{
+    color: var(--bs-body-bg);
+    background-color: var(--main-color);
+    border-radius: 20px;
+}
+
+.info-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.images{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 50px;
+    box-shadow: var(--box-shadow);
+    height: 557px;
+    max-height: 700px;
+    text-decoration: none;
+}
+
+.images .image-1{
+    max-height: 400px;
+}
+
+.images .image-2{
+    min-height: 400px;
+}
+
+.images .btn{
+    width: 250px;
+    border: none;
+    border-radius: 30px;
+    background-color: var(--main-color);
+    padding: 10px;
+    font-weight: 700;
+    font-size: 15px;
+    color: white;
+    transition: .5s ease;
+    
+}
+
+.images .btn:hover{
+    width: 300px;
+    background-color: #80a141;
+    text-decoration: none;
+}
+
+/* NAVBAR */
+.fixed-side-navbar{
+    border-radius: 60px;
+}
+
+
+#menu-btn{
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: var(--black);
+    display: none;
+}
+
+.banniere{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./img/pexels-anete-lusina-4792666.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center;
+  }
+
+
+  /* .contact-content{
+    margin-top: 20px;
+  } */
+
+  .contact-content button .btn{
+    background-color: #80a141;
+  }
+ 
+
+  @media (max-width: 1200px){
+
+    section{
+        padding: 3rem 5%;
+    }
+}
+
+
+
+@media (max-width: 991px){
+    html{
+        font-size: 55%;
+    }
+
+    section{
+        padding: 2rem 2rem;
+    }
+
+    .header .navbar{
+        position: absolute;
+        top: 99%; left: 0; right: 0;
+        background-color: var(--light-bg);
+        border-top: var(--border);
+        padding: 2rem;
+        transition: .2s linear;
+        clip-path: polygon(0 0, 100% 0, 0 0);
+    }
+
+    .header .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100%, 0 100%);
+    }
+
+    .header .navbar a{
+        display: block;
+        margin: 2rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px){
+
+    #menu-btn{
+        display: inline-block;
+        transition: .2s linear;
+    }
+
+    #menu-btn .icon{
+        transform: rotate(180deg);
+    }
+
+
+    .header .navbar{
+        position: absolute;
+        top: 99%; left: 0; right: 0;
+        background-color: var(--light-bg);
+        border-top: var(--border);
+        padding: 2rem;
+        transition: .2s linear;
+        clip-path: polygon(0 0, 100% 0, 0 0);
+    }
+
+    .header .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100%, 0 100%);
+    }
+
+    .header .navbar a{
+        display: block;
+        margin: 2rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 450px){
+    html{
+        font-size: 50%;
+    }
+
+    section{
+        padding: 3rem 2rem;
+    }
+
+}
